@@ -34,9 +34,56 @@ class SList:
             runner = runner.next 	# Establecer el corredor a su vecino
         return self                 # Una vez que el bucle está terminado, regrese a sí mismo para permitir el encadenamiento
 
+    def remove_from_front(self):
+        runner = self.head 
+        self.head = runner.next
+        return self
+
+    def remove_from_back(self):
+        if(self.head!=None and self.head.next!=None):
+            runner = self.head
+            while(runner.next.next != None):
+                runner = runner.next
+            runner.next=None
+        elif(self.head.next==None):
+            self.head.value=None
+        return self
+
+    def remove_val(self, val):
+        runner = self.head
+        #Primer nodo eliminado
+        if runner.value == val:
+            self.head = runner.next
+            return self
+        #Eliminar el nodo con el valor en medio de la lista
+        while(runner.next.value != val):
+            runner = runner.next
+        temp = runner.next.next
+        #runner.next = None
+        runner.next = temp
+        return self
+        
+
+
+
+    def insert_at(self, val, n):
+        runner = self.head
+        if n == 0 :
+            self.add_to_front(val)
+        else:
+            contador = 1
+            while contador < n :
+                runner = runner.next
+                contador += 1
+            temp = runner.next
+            nuevo = SLNode(val)
+            runner.next = nuevo
+            nuevo.next = temp
+        return self
+
 
 my_list = SList()	# crear una nueva instancia de una lista
-my_list.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").print_values()
+my_list.add_to_front("1").add_to_back("2").add_to_back("3").add_to_back("4").remove_val("2").print_values()
 # encadenamiento, yeah!
 # la salida deberia ser:
 # Listas enlazadas son divertidas!
