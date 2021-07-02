@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Actividad 2</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <style>
+        #slideUpDown{
+            text-align: center;
+        }
+    </style>
+
+    <script>  
+        $(document).ready(function(){           
+            $('button.addClass').click(function(){
+                $('#addClass').css('background-color', 'red');
+            });
+            $('button.addToggle').click(function(){
+                $('#perro').toggle();
+            });
+            $('button.after').click(function(){
+                $('#afbe').after("Nuevo contenido creado después, fuera del elemento.");
+            });
+            $('button.before').click(function(){
+                $('#afbe').before("Nuevo contenido creado antes, fuera del elemento.");
+            });
+            $('button.hide').click(function(){
+                $('#hideshow').hide();
+            });
+            $('button.show').click(function(){
+                $('#hideshow').show();
+            });
+            $('button.slideDown').click(function(){
+                $('#slideUpDown').slideDown();
+            });
+            $('button.slideUp').click(function(){
+                $('#slideUpDown').slideUp();
+            });
+            $('button.fadeIn').click(function(){
+                $('#fadeInOut').fadeIn();
+            });
+            $('button.fadeOut').click(function(){
+                $('#fadeInOut').fadeOut();
+            });
+            $('.click').click(function(){
+                $('#pclick').hide();
+            });
+            $('#azul').click(function(){
+                $('#rojo').slideToggle();
+            })
+            $('.append').click(function(){
+                $('#pappend').append(" Nuevo contenido agregado con Append.")
+            })
+
+
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container my-5">
+        <div class="mx-auto p-5 text-center">
+            <h1>AddClass</h1>
+        </div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <button type="button" class="btn btn-primary addClass">Agregar Clase</button>
+            </div>
+            <div class="col col-lg-8">
+                <p id="addClass">Clickea el botón y agrega la clase rojo al párrafo.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1>Toggle</h1>
+        </div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <button type="button" class="btn btn-primary addToggle">Toggle</button>
+            </div>
+            <div class="col col-lg-6">
+                <p>Clickea el botón para esconder y mostrar el perrito</p>
+            </div>
+            <div class="col col-lg-2">
+                <img src="perro.jpg" id="perro" width="75%">
+            </div>
+        </div>
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1>After y Before</h1>
+        </div>
+        <div class="row">
+            <div class="btn-group col col-lg-4" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-success before">Before</button>
+                <button type="button" class="btn btn-success after">After</button>
+            </div>
+            <div class="col col-lg-8">
+                <p id="afbe">Clickea los botones y agrega contenido antes y/o despues del elemento.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1>Hide y Show</h1>
+        </div>
+        <div class="row ">
+            <div class="btn-group col col-lg-4 btn-sm" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-outline-secondary hide">Hide</button>
+                <button type="button" class="btn btn-outline-secondary show">Show</button>
+            </div>
+            <div class="col col-lg-6">
+                <p>Clickea "Hide" para esconder y "Show" para mostrar a Luigi.</p>
+            </div>
+            <div class="col col-lg-2">
+                <img src="luigi.jpg" id="hideshow" width="100%">
+            </div>
+        </div>
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1>slideDown y slideUp</h1>
+        </div>
+        <div class="row ">
+            <div class="btn-group col col-lg-4 btn-sm" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-outline-primary slideUp">slideUp</button>
+                <button type="button" class="btn btn-outline-primary slideDown">slideDown</button>
+            </div>
+            <div class="col col-lg-8">
+                <p id="slideUpDown">Clickea "slideUp" para esconder deslizando el texto hacia arriba y "slideDown"
+                    para mostrar deslizando el texto hacia abajo.
+                </p>
+            </div>
+        </div> 
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1>fadeIn y fadeOut</h1>
+        </div>
+        <div class="row">
+            <div class="btn-group col col-lg-4 btn-group-sm" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-dark fadeOut">fadeOut</button>
+                <button type="button" class="btn btn-dark fadeIn">fadeIn</button>
+            </div>
+            <div class="col col-lg-6">
+                <p id="slideUpDown">muestra y oculta al perrito con el efecto "fading".
+                </p>
+            </div>
+            <div class="col col-lg-2">
+                <img src="perro.jpg" id="fadeInOut" width="50%">
+            </div>
+        </div>  
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1 class="click">Click</h1>
+        </div>
+        <div class="row">
+            <div class="col col-lg-12">
+                <p id="pclick" class="text-center">Clickea el título para hacer desaparecer este párrafo.</p>
+            </div>
+        </div>    
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1 class="click">SlideToggle</h1>
+        </div>
+        <div class="row">
+            <div class="col col-lg-12">
+                <p class="text-center">Clickea sobre el boton azul para mostrar y esconder el boton rojo</p>
+            </div>
+            <div class="col col-lg-12 text-center my-2">
+                <button class="btn btn-primary" id="azul" type="button">Azul</button>
+            </div>
+            <div class="col col-lg-12 text-center">
+                <button class="btn btn-danger" id="rojo" type="button">Rojo</button>
+            </div>
+        </div>    
+        <hr>
+        <div class="mx-auto p-5 text-center">
+            <h1>Append</h1>
+        </div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <button type="button" class="btn btn-primary append">Append</button>
+            </div>
+            <div class="col col-lg-8">
+                <p id="pappend">Clickea el botón y agrega contenido al párrafo.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
