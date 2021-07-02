@@ -8,7 +8,7 @@ class Animal():
         self.felicidad = felicidad
     
     def display_info(self):
-        print(f"Nombre: {self.nombre}, Salud: {self.salud}, Felicidad: {self.felicidad} ")
+        print(f"Nombre: {self.nombre}, Salud: {self.salud}, Felicidad: {self.felicidad}")
         return self
 
     def alimentar(self):
@@ -27,7 +27,7 @@ class Tigre(Animal):
 class Oso(Animal):
     def __init__(self, nombre, edad = randint(0,30), salud = randint(0,100) , felicidad = randint(0,100) , color = "pardo"):
         super().__init__(nombre, edad, salud, felicidad)
-        self.color = color
+
 
 class Zoo:
     def __init__(self, zoo_name):
@@ -43,7 +43,6 @@ class Zoo:
         print("-"*20, self.name, "-"*20)
         for animal in self.animals:
             animal.display_info()
-
 
 zoo1 = Zoo("Cris's Zoo")
 zoo1.add_tiger("Tom")
