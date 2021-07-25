@@ -1,0 +1,14 @@
+# ignora cualquier archivo llamado "secret.txt"
+secret.txt
+# ignora cualquier directorio llamado "secrets"
+secrets/
+# ignora un archivo llamado "hidden.txt" ubicado en la raíz de tu directorio de trabajo
+/hidden.txt
+# ignora un directorio llamado "node_modules" ubicado en la raíz de tu directorio de trabajo
+/node_modules/
+# ignora cualquier archivo con extensión .png
+*.png
+# ignora cualquier archivo o directorio que comienza con "cache", como cache-file-01, cached_assets/, etc.
+cache*
+# ignora cualquier archivo o directorio que termine con "data", como project_data/, big_file_of_data
+*data
